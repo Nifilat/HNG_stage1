@@ -39,7 +39,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 USE_X_FORWARDED_FOR = True
 USE_X_FORWARDED_HOST = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
