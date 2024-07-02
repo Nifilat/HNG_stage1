@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 # Load environment variables from .env file
 load_dotenv()
@@ -39,7 +40,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 USE_X_FORWARDED_FOR = True
 USE_X_FORWARDED_HOST = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 
 # Application definition
@@ -94,6 +95,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 
 
