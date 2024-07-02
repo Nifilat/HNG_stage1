@@ -8,9 +8,6 @@ import os
 
 load_dotenv()  # Ensure to load environment variables if not already loaded
 
-
-
-
 IPREGISTRY_API_KEY = os.getenv('IPREGISTRY_API_KEY')
 OPENWEATHERMAP_API_KEY = os.getenv('OPENWEATHERMAP_API_KEY')
 
