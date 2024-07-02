@@ -3,10 +3,16 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import HelloSerializer
 from django.shortcuts import render
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # Ensure to load environment variables if not already loaded
 
 
-IPREGISTRY_API_KEY = '54rvx9hmw7857tba'
-OPENWEATHERMAP_API_KEY = '249ef28d862d4e94fc1cdf78068f18dc'
+
+
+IPREGISTRY_API_KEY = os.getenv('IPREGISTRY_API_KEY')
+OPENWEATHERMAP_API_KEY = os.getenv('OPENWEATHERMAP_API_KEY')
 
 def name_form(request):
     return render(request, 'name_data/form.html')
